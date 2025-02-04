@@ -1,0 +1,30 @@
+/* css variables for colors to be used within the whole system */
+
+:root {
+  --dark-bg-color: rgb(4, 24, 44);
+  --darker-bg-color: #03101d;
+  /* --dark-text-color: rgb(4, 24, 44); */
+
+  /* --light-bg-color: rgb(255, 245, 230); */
+  --light-bg-color: rgb(255, 255, 255);
+  --light-text-color: rgb(255, 255, 255);
+
+  --base-gradient-color: rgba(4, 24, 44, 1);
+  --light-gradient-color: rgba(0, 0, 0, 0);
+  --dark-gradient-color: rgba(3, 16, 29, 1);
+  --black-gradient-color: rgba(0, 0, 0, 1);
+
+  --accent-yellow: rgb(255, 153, 0);
+
+  --divider-white: rgb(245, 245, 245);
+  --divider-yellow: rgb(255, 153, 0);
+
+  --btn-primary-color: rgb(255, 153, 0);
+  --btn-secondary-color: rgb(245, 245, 245);
+
+  /* test */
+  /* --light-text-color: rgb(0, 0, 0); */
+  --test-dark-bg-color: rgb(1, 13, 26);
+  --test-base-gradient-color: rgba(0, 2, 3, 0.95);
+  --test-light-gradient-color: rgba(4, 24, 44, 0.95);
+}

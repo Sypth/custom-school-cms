@@ -1,0 +1,74 @@
+@import url("../../styles/colors.css");
+
+* {
+  box-sizing: border-box;
+}
+
+.navigation {
+  background-color: var(--dark-bg-color);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.logoText,
+.logoText2 {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--light-text-color);
+}
+
+.logoText {
+  letter-spacing: 1px;
+}
+
+/* navigation drawer */
+.drawerContainer {
+  height: 100%;
+  color: var(--light-text-color);
+  background-color: var(--dark-bg-color);
+}
+
+.drawerItemsContainer {
+  width: 100%;
+  height: calc(100vh - (25vh + 60px));
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.drawerItemsWrapper {
+  width: calc(100% / 3);
+  height: 100%;
+  padding: 0 4rem;
+}
+
+.bgImage {
+  background-image: url("../../assets/backgrounds/spcf-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  height: 25vh;
+  width: 100%;
+  background: rgba(4, 24, 44, 0.90);
+}
+
+.navItemTextDefault {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--light-text-color);
+    font-weight: 500;
+  }
+}
+
+.navItemTextSelected {
+  cursor: pointer;
+  color: var(--light-text-color);
+  font-weight: 500;
+}
