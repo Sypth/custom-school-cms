@@ -3,8 +3,8 @@ import { Outlet, useLocation, matchPath } from "react-router-dom";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Layout.module.css";
 
-import Navigation from "../nav/Navigation";
-import NavigationDrawer from "../nav/NavigationDrawer";
+import Navigation from "../navigation/Navigation";
+import NavigationPanel from "../navigation/NavigationPanel";
 
 export default function NavLayout({}) {
   const [opened, { toggle }] = useDisclosure();
@@ -22,23 +22,24 @@ export default function NavLayout({}) {
 
   return (
     <AppShell
-      header={!isHidden() ? { height: 60 } : null}
+      // header={!isHidden() ? { height: 60 } : null}
       navbar={{
-        width: "100vw",
+        width: "190px",
         breakpoint: "sm",
-        collapsed: { mobile: !opened, desktop: !opened },
+        collapsed: { mobile: !opened, desktop: opened },
       }}
       withBorder={false}
       classNames={{ root: classes.navigation }}
     >
-      {!isHidden() ? (
+      {/* {!isHidden() ? (
         <AppShell.Header>
           <Navigation opened={opened} toggle={toggle} />
         </AppShell.Header>
-      ) : null}
+      ) : null} */}
 
-      <AppShell.Navbar>
-        <NavigationDrawer toggle={toggle} />
+      <AppShell.Navbar className={classes.navbar}>
+        <Navigation opened={opened} toggle={toggle} />
+        <NavigationPanel toggle={toggle} />
       </AppShell.Navbar>
 
       <AppShell.Main>

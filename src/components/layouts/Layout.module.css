@@ -46,3 +46,7 @@
 .navigation {
   overflow: hidden;
 }
+
+.navbar {
+  background-color: #545d6d;
+}

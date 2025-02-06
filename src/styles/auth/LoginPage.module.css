@@ -7,6 +7,33 @@
   font-family: "Poppins", serif;
 }
 
+.loginContainer {
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(4, 24, 44, 1),
+    rgba(3, 16, 29, 1)
+  );
+  color: var(--light-text-color);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.logoText1 {
+  letter-spacing: 1.15px;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--light-text-color);
+}
+
+.logoText2 {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--light-text-color);
+}
+
 .section {
   height: 100vh;
   display: flex;
@@ -14,17 +41,21 @@
   justify-content: center;
 }
 
-.loginSection {
-  background-color: var(----accent-yellow);
+.dividerRadius {
+  border-radius: 10px;
 }
 
-.loginContainer {
-    width: 500px;
-    height: 600px;
-  background-color: var(--dark-bg-color);
+.loginFormContainer {
+  padding: 20px 0;
+}
+
+.formTextInput {
+  background-color: #3c3d37;
+  border: none;
+  font-size: 10px;
   color: var(--light-text-color);
 }
 
-.dividerRadius {
-    border-radius: 10px;
+.loginButton {
+  border: none;
 }

@@ -1,49 +1,42 @@
 import { lazy } from "react";
-import NavLayout from "../components/layouts/NavLayout.jsx";
+import { Navigate, Outlet } from "react-router-dom";
 
-// const LandingPage = lazy(() => import("../pages/landing-page/LandingPage.jsx"));
-// const AcademicsPage = lazy(() => import("../pages/academics/AcademicsPage"));
-// const AdmissionPage = lazy(() => import("../pages/admission/AdmissionPage"));
-// const DepartmentPage = lazy(() => import("../pages/departments/DepartmentPage"));
-// const ResearchPage = lazy(() => import("../pages/research/ResearchPage.jsx"))
+import NavLayout from "../components/layouts/NavLayout.jsx";
+import ProtectedRoute from "../components/auth/ProtectedRoutes.jsx";
+import PublicRoute from "../components/auth/PublicRoutes.jsx";
+
+const LandingPage = lazy(() => import("../pages/landing-page/LandingPage.jsx"));
 
 const AuthPage = lazy(() => import("../pages/auth/AuthPage.jsx"));
 
 const routes = [
   {
-    element: <NavLayout />,
-    children: [
-      // {
-      //   path: "/",
-      //   element: <LandingPage />,
-      // },
-      // {
-      //   path: "/academics",
-      //   element: <AcademicsPage />,
-      // },
-      // {
-      //   path: "/admission/:category",
-      //   element: <AdmissionPage />,
-      // },
-      // {
-      //   path: "/departments/:category",
-      //   element: <DepartmentPage />,
-      // },
-      // {
-      //   path: "/research",
-      //   element: <ResearchPage />,
-      // },
-    ],
-  },
-  {
-    element: <AuthPage />,
+    element: <PublicRoute />,
     children: [
       {
-        path: "/:category",
+        path: "auth/:category",
         element: <AuthPage />,
       },
     ],
   },
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        element: <NavLayout />,
+        children: [
+          {
+            path: "/landing",
+            element: <LandingPage />,
+          },
+        ],
+      },
+    ],
+  },
+  // {
+  //   path: "*",
+  //   element: <Navigate to="/landing" />, // Catch-all route
+  // },
 ];
 
 export default routes;

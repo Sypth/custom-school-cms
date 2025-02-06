@@ -4,9 +4,7 @@ import "@mantine/core/styles.css";
 import "./styles/colors.css";
 import ThemeProvider from "./providers/ThemeProvider";
 import routes from "./routes/routes";
-// import Loading from "./components/loading/Loading";
-
-
+import Loading from "./components/loading/Loading";
 
 const AppRoutes = () => {
   const router = useRoutes(routes);
@@ -16,12 +14,12 @@ const AppRoutes = () => {
 function App() {
   return (
     <ThemeProvider>
-      {/* <Suspense fallback={<Loading />}> */}
+      <Suspense fallback={<Loading />}>
         <BrowserRouter>
           {/* <ScrollToTop /> */}
           <AppRoutes />
         </BrowserRouter>
-      {/* </Suspense> */}
+      </Suspense>
     </ThemeProvider>
   );
 }

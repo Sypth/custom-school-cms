@@ -22,10 +22,10 @@ export default function Navigation({ opened, toggle }) {
             </Stack>
         </Flex>
 
-        <Burger
+        {/* <Burger
             opened={opened}
             onClick={toggle}
             color="white"
-        />
+        /> */}
     </nav>
 }
